@@ -7,7 +7,7 @@ const api = Router();
 
 api.use("/message", messageRouter);
 
-api.use("/sign-up", clientRoutes);
+api.use("/client", clientRoutes);
 
 api.get("/settings", (req, res) => {
 	res.send("not implemented yet");
