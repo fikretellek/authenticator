@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-import clientController from "../controllers/clientController/index.js";
+import { clientController } from "../controllers/index.js";
 import { checkCredentialsForSignUp } from "../middlewares/checkCredentialsForSignUp.js";
 import { checkIfClientExist } from "../middlewares/checkIfClientExist.js";
 
