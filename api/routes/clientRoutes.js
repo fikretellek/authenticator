@@ -13,4 +13,8 @@ router.get(
 	clientController.createNewClient,
 );
 
+router.get("/settings", (req, res) => {
+	res.send("not implemented yet");
+});
+
 export default router;
