@@ -4,7 +4,7 @@ import db from "../../../db.js";
 import { checkHashedPassword } from "../../../functions/checkHashedPassword.js";
 
 // this line will be moved to .env
-const JWT_SECRET = "abc12345";
+const JWT_SECRET = "abc12345.";
 
 export const getUser = async (req, res) => {
 	const { email, password } = req.body;
