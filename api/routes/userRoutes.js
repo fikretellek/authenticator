@@ -17,6 +17,8 @@ router.post(
 
 router.get("/get", validateApiKey, userController.getUser);
 
+router.get("/verify", validateApiKey, userController.verifyUser);
+
 router.get("/user/update", (req, res) => {
 	res.send("not implemented yet");
 });
