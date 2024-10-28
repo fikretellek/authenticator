@@ -1,16 +1,20 @@
 import { Router } from "express";
 
-import clientController from "../controllers/clientController/index.js";
-import { checkCredentialsForSignUp } from "../middlewares/checkCredentialsForSignUp.js";
+import { clientController } from "../controllers/index.js";
 import { checkIfClientExist } from "../middlewares/checkIfClientExist.js";
+import { validateEmailAndPassword } from "../middlewares/validateEmailAndPassword.js";
 
 const router = Router();
 
 router.get(
 	"/sign-up",
-	checkCredentialsForSignUp,
+	validateEmailAndPassword,
 	checkIfClientExist,
 	clientController.createNewClient,
 );
+
+router.get("/settings", (req, res) => {
+	res.send("not implemented yet");
+});
 
 export default router;

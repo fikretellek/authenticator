@@ -1,7 +1,5 @@
 import { createNewClient } from "./createNewClient/index.js";
 
-const clientController = {
+export default {
 	createNewClient,
 };
-
-export default clientController;

@@ -1,4 +1,4 @@
-export const checkCredentialsForSignUp = (req, res, next) => {
+export const validateEmailAndPassword = (req, res, next) => {
 	const { email, password } = req.body;
 
 	const emailRegex = /^[\w.-]+@([\w-]+\.)+[\w-]{2,4}$/;
