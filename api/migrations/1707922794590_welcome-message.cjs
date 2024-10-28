@@ -9,16 +9,16 @@
  * }}
  */
 const migration = {
-	up(pgm) {
-		pgm.createTable("message", {
-			content: { notNull: true, type: "string" },
-		});
-		pgm.sql("INSERT INTO message (content) VALUES ('Hello, world!')");
-	},
-	down(pgm) {
-		pgm.dropTable("message");
-	},
-	shorthands: undefined,
+	// up(pgm) {
+	// 	pgm.createTable("message", {
+	// 		content: { notNull: true, type: "string" },
+	// 	});
+	// 	pgm.sql("INSERT INTO message (content) VALUES ('Hello, world!')");
+	// },
+	// down(pgm) {
+	// 	pgm.dropTable("message");
+	// },
+	// shorthands: undefined,
 };
 
 module.exports = migration;
