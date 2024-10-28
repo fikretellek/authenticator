@@ -16,6 +16,9 @@ export const createNewClient = async (req, res) => {
 			[email, passwordHash],
 		);
 
+		// eslint-disable-next-line no-console
+		console.log(saveClientQuery);
+
 		const apiKey = saveClientQuery.rows[0].api_key;
 
 		res.status(201).send({ success: true, apiKey: apiKey });
