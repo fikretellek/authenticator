@@ -7,7 +7,7 @@ import { validateEmailAndPassword } from "../middlewares/validateEmailAndPasswor
 
 const router = Router();
 
-router.get(
+router.post(
 	"/set",
 	validateApiKey,
 	validateEmailAndPassword,
@@ -15,9 +15,7 @@ router.get(
 	userController.setNewUser,
 );
 
-router.get("/user/get", (req, res) => {
-	res.send("not implemented yet");
-});
+router.get("/get", validateApiKey, userController.getUser);
 
 router.get("/user/update", (req, res) => {
 	res.send("not implemented yet");
