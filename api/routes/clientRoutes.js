@@ -6,7 +6,7 @@ import { validateEmailAndPassword } from "../middlewares/validateEmailAndPasswor
 
 const router = Router();
 
-router.get(
+router.post(
 	"/sign-up",
 	validateEmailAndPassword,
 	checkIfClientExist,
