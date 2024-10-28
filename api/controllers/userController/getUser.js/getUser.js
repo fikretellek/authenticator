@@ -17,7 +17,9 @@ export const getUser = async (req, res) => {
 		);
 
 		if (userDetails.rows.length === 0) {
-			return res.status(401).json({ message: "Invalid credentials" });
+			return res
+				.status(401)
+				.json({ success: false, message: "Invalid credentials" });
 		}
 
 		const user = userDetails.rows[0];
@@ -32,13 +34,18 @@ export const getUser = async (req, res) => {
 
 			const token = jwt.sign(payload, JWT_SECRET, { expiresIn: "1h" });
 
-			return res.json({ token });
+			return res.json({ success: true, token, payload });
 		} else {
-			return res.status(401).json({ message: "Invalid credentials" });
+			return res
+				.status(401)
+				.json({ success: false, message: "Invalid credentials" });
 		}
 	} catch {
 		return res
 			.status(500)
-			.json({ message: "An error occurred while processing your request." });
+			.json({
+				success: false,
+				message: "An error occurred while processing your request.",
+			});
 	}
 };
